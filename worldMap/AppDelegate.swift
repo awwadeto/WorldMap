@@ -13,10 +13,40 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var boundaryBox : NSArray!
+    var features : NSArray!
+    var geometries : [Geometry] = []
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+            let jsonPath = NSBundle.mainBundle().pathForResource("countries_small", ofType: "geojson")
+            let jsonData = NSData(contentsOfFile: jsonPath!)
+            
+            do {
+                if let jsonDict = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: []) as? NSDictionary {
+                    if let bbox = jsonDict["bbox"] as? NSArray {
+                        boundaryBox = bbox
+                    }
+                    
+                    if let features = jsonDict["features"] as? NSArray {
+                        self.features = features
+                        for feature in features {
+                            if let feature = feature as? NSDictionary {
+                                if let geometry = feature["geometry"] as? NSDictionary {
+                                    let geo = Geometry(type: geometry["type"] as! String)
+                                    if let coordinates = geometry["coordinates"] as? NSArray {
+                                        geo.coordinates = coordinates
+                                    }
+                                    self.geometries.append(geo)
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch {
+            
+            }
+
         return true
     }
 

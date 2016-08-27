@@ -15,6 +15,8 @@
 		46D99DA81D716E170077C9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46D99DA61D716E170077C9ED /* LaunchScreen.storyboard */; };
 		46D99DB31D716E170077C9ED /* worldMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D99DB21D716E170077C9ED /* worldMapTests.swift */; };
 		46D99DBE1D716E170077C9ED /* worldMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D99DBD1D716E170077C9ED /* worldMapUITests.swift */; };
+		46D99DCD1D716E5B0077C9ED /* countries_small.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 46D99DCC1D716E5B0077C9ED /* countries_small.geojson */; };
+		46D99DCF1D71C1E30077C9ED /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D99DCE1D71C1E30077C9ED /* Geometry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		46D99DB91D716E170077C9ED /* worldMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = worldMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D99DBD1D716E170077C9ED /* worldMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = worldMapUITests.swift; sourceTree = "<group>"; };
 		46D99DBF1D716E170077C9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D99DCC1D716E5B0077C9ED /* countries_small.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries_small.geojson; sourceTree = "<group>"; };
+		46D99DCE1D71C1E30077C9ED /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,12 @@
 		46D99D991D716E170077C9ED /* worldMap */ = {
 			isa = PBXGroup;
 			children = (
+				46D99DD21D71CA3D0077C9ED /* Controller */,
+				46D99DD11D71CA390077C9ED /* Model */,
+				46D99DD01D71CA350077C9ED /* View */,
 				46D99D9A1D716E170077C9ED /* AppDelegate.swift */,
-				46D99D9C1D716E170077C9ED /* ViewController.swift */,
 				46D99D9E1D716E170077C9ED /* Main.storyboard */,
+				46D99DCC1D716E5B0077C9ED /* countries_small.geojson */,
 				46D99DA41D716E170077C9ED /* Assets.xcassets */,
 				46D99DA61D716E170077C9ED /* LaunchScreen.storyboard */,
 				46D99DA91D716E170077C9ED /* Info.plist */,
@@ -126,6 +133,29 @@
 				46D99DBF1D716E170077C9ED /* Info.plist */,
 			);
 			path = worldMapUITests;
+			sourceTree = "<group>";
+		};
+		46D99DD01D71CA350077C9ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		46D99DD11D71CA390077C9ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46D99DCE1D71C1E30077C9ED /* Geometry.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		46D99DD21D71CA3D0077C9ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46D99D9C1D716E170077C9ED /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +264,7 @@
 			files = (
 				46D99DA81D716E170077C9ED /* LaunchScreen.storyboard in Resources */,
 				46D99DA51D716E170077C9ED /* Assets.xcassets in Resources */,
+				46D99DCD1D716E5B0077C9ED /* countries_small.geojson in Resources */,
 				46D99DA01D716E170077C9ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46D99D9D1D716E170077C9ED /* ViewController.swift in Sources */,
+				46D99DCF1D71C1E30077C9ED /* Geometry.swift in Sources */,
 				46D99DA31D716E170077C9ED /* worldMap.xcdatamodeld in Sources */,
 				46D99D9B1D716E170077C9ED /* AppDelegate.swift in Sources */,
 			);
